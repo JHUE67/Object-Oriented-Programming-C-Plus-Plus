@@ -36,3 +36,45 @@ int const RPG::getStrength(){
 int const RPG::getDefense(){
     return defense;
 }
+
+void RPG::setSkills(){
+    if (type == "mage"){
+        skills[0] = "fire";
+        skills[1] = "thunder";
+    } else if (type == "thief"){
+        skills[0] = "pilfer";
+        skills[1] = "jab";
+    } else if (type == "archer"){
+        skills[0] = "parry";
+        skills[1] = "crossbow_attack";
+    } else {
+        skills[0] = "slash";
+        skills[1] = "parry";
+    }
+}
+
+void RPG::printActions(string skill, RPG opponent){
+    printf("%s used %s on %s\n", name.c_str(), skill.c_str(), opponent.getName().c_str());
+}
+
+void RPG::updateHealth(int health){
+    this->health = health;
+}
+
+const bool RPG::isAlive(){
+    if (health > 0){
+        return 1;
+    }
+    else return 0;  
+}
+
+// Remaining functions
+/*
+void RPG::attack(RPG*){
+    **implementation
+}
+
+void RPG::useSkill(RPG*){
+    **implementation
+}
+*/
