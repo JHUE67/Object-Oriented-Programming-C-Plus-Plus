@@ -6,6 +6,8 @@ using namespace std;
 
 const int SKILL_SIZE = 2;
 
+
+
 class RPG{
     public:
     //constructors
@@ -32,5 +34,9 @@ class RPG{
     string type;
     string skills[SKILL_SIZE];
 };
+
+void gameLoop(RPG* player1, RPG* player2);
+
+void displayEnd(RPG player1, RPG player2);
 
 #endif
