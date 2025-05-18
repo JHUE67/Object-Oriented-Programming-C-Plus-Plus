@@ -80,6 +80,8 @@
     }
     */
 
+    // Lab 4 Changes:
+
     void RPG::attack(RPG* opponent){
         int damage;
         int newHealth;
