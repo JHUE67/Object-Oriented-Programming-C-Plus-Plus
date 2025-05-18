@@ -9,7 +9,8 @@ const int SKILL_SIZE = 2;
 class RPG{
     public:
     //constructors
-    RPG();
+    RPG();// default constructor
+
     RPG(string name, int health, int strength, int defense, string type);
     
     void setSkills();
@@ -22,9 +23,11 @@ class RPG{
     const int getHeatlh();
     const int getStrength();
     const int getDefense();
+    
     private:
     string name;
     int health;
+    int strength;
     int defense;
     string type;
     string skills[SKILL_SIZE];
