@@ -1,4 +1,5 @@
 #include "RPG.h"
+#include <iostream>
 
 using namespace std;
 
@@ -25,7 +26,7 @@ string const RPG::getName() {
     return name;
 }
 
-int const RPG::getHeatlh(){
+int const RPG::getHealth(){
     return health;
 }
 
@@ -78,3 +79,26 @@ void RPG::useSkill(RPG*){
     **implementation
 }
 */
+
+void RPG::attack(RPG* opponent){
+    int damage;
+    int newHealth;
+    damage = this->strength - (*opponent).getDefense();
+    newHealth = (*opponent).getHealth(); - damage;
+    (*opponent).updateHealth(newHealth);
+}
+
+void RPG::useSkill(RPG* opponent){
+    for (int i = 0; i < SKILL_SIZE; i++){
+        printf("Skill %i: %s\n",i, skills[i].c_str());
+    }
+
+    int chosen_skill_index;
+    printf("Choose a skill to use: Enter 0 or 1\n");
+    cin >> chosen_skill_index;
+    string chosen_skill;
+    chosen_skill = skills[chosen_skill_index];
+    printActions(chosen_skill, *opponent);
+
+    RPG::attack(opponent);
+}

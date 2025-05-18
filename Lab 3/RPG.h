@@ -20,7 +20,7 @@ class RPG{
     void useSkill(RPG*);
     const bool isAlive();
     const string getName();
-    const int getHeatlh();
+    const int getHealth();
     const int getStrength();
     const int getDefense();
     
